@@ -2,3 +2,23 @@ extends layout
 
 block content
   h1 Welcome to Resume to Job!
+  style(type='text/css').
+    h1 {
+      margin-left: 250px;
+      text-align: center;
+      color: white;
+      font-size: 40px;
+    }
+  body
+    form(action= '/signup', name='signup' method='GET')
+        input(type='submit', value='Sign Up')
+    form(action='/login', name='login', method='GET')
+        input(type='submit', value='Log In')
+    style(type='text/css').
+      form {
+        margin-left: 610px;
+        color: DodgerBlue;
+        font-size: 40px;
+        padding-top:100px;
+        padding-bottom: 100px;
+      }
