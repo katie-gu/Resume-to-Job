@@ -1,0 +1,15 @@
+h1 {
+  color: White;
+  font-size: 40px;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+}
+
+body {
+  background-color: White;
+}

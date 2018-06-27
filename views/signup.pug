@@ -5,15 +5,15 @@ block content
   form(method='POST', action='/catalog/signup')
     div.form-group
       label(for='Username') Username:
-      input#username.form-control(type='text')
+      input#username.form-control(type='text', name='username')
       label(for='Password') Password:
-      input#password.form-control(type='text')
+      input#password.form-control(type='text', name='password')
       label(for='Confirm Password') Confirm Password:
-      input#confirmpassword.form-control(type='text')
+      input#confirmpassword.form-control(type='text', name='confirmpassword')
       label(for='Email') Email:
-      input#email.form-control(type='text')
+      input#email.form-control(type='text', name='email')
       label(for='Profession') Profession:
-      input#profession.form-control(type='text')
+      input#profession.form-control(type='text', name='profession')
     button.btn.btn-primary(type='submit') Sign Up
   style(type='text/css').
     h1 {
