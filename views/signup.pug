@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Sign Up
+  form(method='POST', action='/catalog/signup')
+    div.form-group
+      label(for='Username') Username:
+      input#username.form-control(type='text')
+      label(for='Password') Password:
+      input#password.form-control(type='text')
+      label(for='Confirm Password') Confirm Password:
+      input#confirmpassword.form-control(type='text')
+      label(for='Email') Email:
+      input#email.form-control(type='text')
+      label(for='Profession') Profession:
+      input#profession.form-control(type='text')
+    button.btn.btn-primary(type='submit') Sign Up
+  style(type='text/css').
+    h1 {
+      color: white;
+    }
+    form {
+      color: White;
+    }
+
+  if errors
+    ul
+      for error in errors
+        li != error.msg
