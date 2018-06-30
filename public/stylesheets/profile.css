@@ -1,5 +1,6 @@
 h1 {
   color: White;
+  text-align: center;
   font-size: 40px;
 }
 
@@ -10,6 +11,10 @@ h1 {
     font-size: 20px;
 }
 
+a {
+  color: White;
+}
+
 body {
-  background-color: White;
+  background-color: DodgerBlue;
 }

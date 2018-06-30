@@ -1,4 +1,3 @@
-#Routes associated to a user profile.
 var express = require('express');
 var router = express.Router();
 var profileController = require('../controllers/profileController');

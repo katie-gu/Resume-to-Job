@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='/stylesheets/upload_resume.css')
+
+  body
+    h1 Upload Resume
+    form(method='post', action='/uploadresume/post', enctype='multipart/form-data')
+      label(for='file') Choose File to Upload.
+      br
+      br
+      input(type='file', id='file', accept='image/*')
+      br
+      br
+      input(type='submit', id='submit', value='Submit')

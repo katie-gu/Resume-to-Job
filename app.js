@@ -1,19 +1,16 @@
-var createError = require('http-errors');
 var express = require('express');
+var app = express();
 var path = require('path');
+var createError = require('http-errors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var urlencodedParser = require('urlencoded-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-var indexRouter = require('./routes/index');
-var catalogRouter = require('./routes/catalog');
-var usersRouter = require('./routes/users');
-var profileRouter = require('./routes/profile');
 
-var app = express();
 var mongodb = 'mongodb:/katie_gu:database4project@ds163850.mlab.com:63850/jobfinderapp';
 mongoose.connect(mongodb);
 mongoose.Promise = global.Promise;
@@ -26,7 +23,7 @@ app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -38,7 +35,14 @@ app.use(session({
   })
 }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(urlencodedParser);
+
+var indexRouter = require('./routes/index');
+var catalogRouter = require('./routes/catalog');
+var usersRouter = require('./routes/users');
+var profileRouter = require('./routes/profile');
+
 
 app.use('/', indexRouter);
 app.use('/catalog', catalogRouter);
@@ -60,8 +64,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.set('port', process.env.PORT || 8080);
-app.listen(app.get('port'));
 
 module.exports = app;

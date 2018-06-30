@@ -8,24 +8,24 @@ html(lang='en')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     link(rel='stylesheet', href='/stylesheets/profile.css')
 
-body
-  h1 Welcome, #{username}!
-    div(class='container-fluid')
-      div(class='row')
-        div(class='col-sm-2')
-          block sidebar
-            ul(class='sidebar-nav')
-              li
-                a(href='/profile/findjobs') Find Jobs
-                br
-                br
-                a(href='/profile/myjobs') My Jobs
-                br
-                br
-                a(href='/profile/mynetwork') My Network
-                br
-                br
-                a(href='/profile/myaccount') My Account
-                br
-                br
-                a(href='/logout') Log Out
+  body
+    h1 Welcome to Resume to Job!
+      div(class='container-fluid')
+        div(class='row')
+          div(class='col-sm-2')
+            block sidebar
+              ul(class='sidebar-nav')
+                li
+                  a(href='/profile/findjobs') Find Jobs
+                  br
+                  br
+                  a(href='/profile/myjobs') My Jobs
+                  br
+                  br
+                  a(href='/profile/mynetwork') My Network
+                  br
+                  br
+                  a(href='/profile/myaccount') My Account
+                  br
+                  br
+                  a(href='/logout') Log Out

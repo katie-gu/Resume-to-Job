@@ -52,3 +52,24 @@ exports.signup_post = function(req, res, next) {
     });
   }
 };
+
+exports.upload_resume = function(req, res, next) {
+    return res.render('upload_resume');
+};
+
+exports.upload_resume_post = function(req, res, next) {
+    const vision = require('@google-cloud/vision');
+    const client = new vision.ImageAnnotatorClient();
+
+    var reader = new FileReader();
+    var file = document.getElementById('file').files;
+    var b64url = reader.readAsDataURL(file[0]);
+    client.documentTextDetection(b64url)
+      .then(results => {
+          const fullTextAnnotation = results[0].fullTextAnnotation;
+          console.log(fullTextAnnotation.text);
+      })
+      .catch(err => {
+          console.error('ERROR:', err);
+      });
+};
