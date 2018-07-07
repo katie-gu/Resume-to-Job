@@ -1,0 +1,14 @@
+body {
+  background-color: DodgerBlue;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: White;
+  font-size: 40px;
+  text-align: center;
+}
+input {
+  text-align: center;
+}

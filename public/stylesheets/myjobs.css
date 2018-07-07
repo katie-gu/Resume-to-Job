@@ -1,0 +1,19 @@
+body {
+  background-color: DodgerBlue;
+  text-align: center;
+  font-size: 40px;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: White;
+}
+
+a {
+  color: White;
+}
+
+p {
+  color: White;
+}

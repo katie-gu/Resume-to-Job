@@ -9,9 +9,10 @@ var urlencodedParser = require('urlencoded-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var fileUpload = require('express-fileupload');
 
 
-var mongodb = 'mongodb:/katie_gu:database4project@ds163850.mlab.com:63850/jobfinderapp';
+var mongodb = process.env.MONGODB_URI || 'mongodb://katie_gu:database4project@ds163850.mlab.com:63850/jobfinderapp';
 mongoose.connect(mongodb);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
@@ -37,6 +38,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(urlencodedParser);
+app.use(fileUpload());
 
 var indexRouter = require('./routes/index');
 var catalogRouter = require('./routes/catalog');

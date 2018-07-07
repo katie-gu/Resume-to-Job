@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+    head
+      meta(charset='utf-8')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+      link(rel='stylesheet', href='/stylesheets/myjobs.css')
+
+    body
+      h1 Add Job
+      form(method='POST', action='/profile/addjob')
+        div.form-group
+          label(for='position') Position:
+          input#position.form-control(type='text', name='position', required='true')
+        div.form-group
+          label(for='company') Company:
+          input#company.form-control(type='text', name='company', required='true')
+        div.form-group
+          label(for='startdate') Start Date:
+          input#startdate-form-control(type='date', name='startdate', required='true')
+        div.form-group
+          label(for='enddate') End Date:
+          input#enddate-form-control(type='date', name='enddate', required='true')
+        div.form-group
+          label(for='description') Description:
+          input#description-form-control(type='text', name='description', required='true')
+        div.form-group
+      button.btn.btn-primary(type='submit') Sign Up

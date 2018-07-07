@@ -10,11 +10,11 @@ html(lang='en')
 
   body
     h1 Upload Resume
-    form(method='post', action='/uploadresume/post', enctype='multipart/form-data')
+    form(method='POST', action='/profile/findjobs', enctype='multipart/form-data')
       label(for='file') Choose File to Upload.
       br
       br
-      input(type='file', id='file', accept='image/*')
+      input(type='file', id='file', name='file', accept='image/*')
       br
       br
       input(type='submit', id='submit', value='Submit')

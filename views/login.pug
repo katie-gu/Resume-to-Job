@@ -5,9 +5,9 @@ block content
   form(method='POST' action='/catalog/login')
     div.form-group
       label(for='Email') Email:
-      input#email.form-control(type='text')
+      input#email.form-control(type='text', name='email')
       label(for='Password') Password:
-      input#password.form-control(type='text')
+      input#password.form-control(type='text', name='password')
     button.btn.btn-primary(type='submit') Log In
   style(type='text/css').
       h1 {
